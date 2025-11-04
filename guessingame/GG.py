@@ -82,7 +82,7 @@ def start():
             start()
 
 def guessgame():
-                  pick = d[random.randint(0,len(d))]   #guessed mob
+                  pick = d[random.randint(0,len(d) - 1)]   #guessed mob
                   while True:
                               w = "y"
                               guess = input(sent)
