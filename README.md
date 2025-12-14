@@ -25,7 +25,7 @@ to learn by building, keep code clean, and improve step by step.
 1.  Clone the repository:
 
     ``` bash
-    git clone https://github.com/your-username/python-space.git
+    git clone https://github.com/jesterdotcom/python-space.git
     ```
 
 2.  Navigate into the project folder:
