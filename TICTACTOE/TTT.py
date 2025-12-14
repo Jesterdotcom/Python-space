@@ -6,8 +6,8 @@ ans = "y"
 
 h = "|"
 g = "---------"
-p1 = input("Enter Player 1 name = ")
-p2 = input("Enter Player 2 name = ")
+p1 = input("Enter Player 1 name: ")
+p2 = input("Enter Player 2 name: ")
 while ans == "y":
     lft = [1, 2, 3, 4, 5, 6, 7, 8, 9]  # for not overputting
     l = [
@@ -33,7 +33,7 @@ while ans == "y":
     n = " "
     s = ["X", "O"]
     t = [p1, p2]
-    print("Player", p1, " will use X and Player", p2, " will use O ")
+    print("Player", p1, "will use X and Player", p2, "will use O ")
 
     while n in l:
         if (
@@ -87,7 +87,7 @@ while ans == "y":
             print("Player", c1, "turn")
 
             # user input for position
-            pos = int(input("Enter on which position you want to put your symbol : "))
+            pos = int(input("Enter on which position you want to put your symbol: "))
 
             # check inputy is in range or not
             if pos in lft:
@@ -110,7 +110,7 @@ while ans == "y":
             print(l[6], h, l[7], h, l[8])
     if n not in l:
         print("Match Draw")
-    print("Want to play again ? ")
-    ans = input("Type Y for Yes or N for No : ").lower()
+    print("Want to play again? ")
+    ans = input("Type Y for Yes or N for No: ").lower()
 
 print("GAME CLOSED")
