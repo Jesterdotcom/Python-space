@@ -1,6 +1,6 @@
 from display import design
-
 design()
+<<<<<<< HEAD
 
 ans = "y"
 
@@ -8,6 +8,56 @@ h = "|"
 g = "---------"
 p1 = input("Enter Player 1 name: ")
 p2 = input("Enter Player 2 name: ")
+=======
+ans = "y"
+h = "|"
+g = "---------"
+p1 = input("Enter Player 1 name = ")
+p2 = input("Enter Player 2 name = ")
+
+def check():
+        global r
+        r = 0
+        if (
+            l[0] == l[1] == l[2] == "X"
+            or l[3] == l[4] == l[5] == "X"
+            or l[6] == l[7] == l[8] == "X"
+        ):  # for X rows
+            print(p1, "win")
+            r = 1
+        elif (
+            l[0] == l[1] == l[2] == "O"
+            or l[3] == l[4] == l[5] == "O"
+            or l[6] == l[7] == l[8] == "O"
+        ):  # for O rows
+            print(p2, "win")
+            r = 1
+        elif (
+            l[2] == l[4] == l[6] == "X" or l[0] == l[4] == l[8] == "X"
+        ):  # for X diagonals
+            print(p1, "win")
+            r = 1
+        elif (
+            l[2] == l[4] == l[6] == "O" or l[0] == l[4] == l[8] == "O"
+        ):  # for O diagonals
+            print(p2, "win")
+            r = 1
+        elif (
+            l[0] == l[3] == l[6] == "X"
+            or l[1] == l[4] == l[7] == "X"
+            or l[2] == l[5] == l[8] == "X"
+        ):  # for X columns
+            print(p1, "win")
+            r = 1
+        elif (
+            l[0] == l[3] == l[6] == "O"
+            or l[1] == l[4] == l[7] == "O"
+            or l[2] == l[5] == l[8] == "O"
+        ):  # for O columns
+            print(p2, "win")
+            r = 1
+
+>>>>>>> b9f8568 (Fixed bugs and added check function)
 while ans == "y":
     lft = [1, 2, 3, 4, 5, 6, 7, 8, 9]  # for not overputting
     l = [
@@ -27,56 +77,23 @@ while ans == "y":
     print(g)
     print(l[3], h, l[4], h, l[5])
     print(g)
-    print(l[6], h, l[7], h, l[8])
-
+    print(l[6], h, l[7], h, l[8])  
     i = 0
     n = " "
     s = ["X", "O"]
     t = [p1, p2]
+<<<<<<< HEAD
     print("Player", p1, "will use X and Player", p2, "will use O ")
 
+=======
+    print("Player", p1, " will use X and Player", p2, " will use O ")
+>>>>>>> b9f8568 (Fixed bugs and added check function)
     while n in l:
-        if (
-            l[0] == l[1] == l[2] == "X"
-            or l[3] == l[4] == l[5] == "X"
-            or l[6] == l[7] == l[8] == "X"
-        ):  # for X rows
-            print(p1, "win")
-            break
-        elif (
-            l[0] == l[1] == l[2] == "O"
-            or l[3] == l[4] == l[5] == "O"
-            or l[6] == l[7] == l[8] == "O"
-        ):  # for O rows
-            print(p2, "win")
-            break
-        elif (
-            l[2] == l[4] == l[6] == "X" or l[0] == l[4] == l[8] == "X"
-        ):  # for X diagonals
-            print(p1, "win")
-            break
-        elif (
-            l[2] == l[4] == l[6] == "O" or l[0] == l[4] == l[8] == "O"
-        ):  # for O diagonals
-            print(p2, "win")
-            break
-        elif (
-            l[0] == l[3] == l[6] == "X"
-            or l[1] == l[4] == l[7] == "X"
-            or l[2] == l[5] == l[8] == "X"
-        ):  # for X columns
-            print(p1, "win")
-            break
-        elif (
-            l[0] == l[3] == l[6] == "O"
-            or l[1] == l[4] == l[7] == "O"
-            or l[2] == l[5] == l[8] == "O"
-        ):  # for O columns
-            print(p2, "win")
+        check()
+        if r == 1:
             break
         else:
             # alternating values evenodd method
-
             if i % 2 == 0:
                 c1 = t[0]
                 c2 = s[0]
@@ -109,8 +126,17 @@ while ans == "y":
             print(g)
             print(l[6], h, l[7], h, l[8])
     if n not in l:
+<<<<<<< HEAD
         print("Match Draw")
     print("Want to play again? ")
     ans = input("Type Y for Yes or N for No: ").lower()
+=======
+        check()
+        if r == 0:
+            print("Match Draw")
+        print("Want to play again ? ")
+        ans = input("Type Y for Yes or N for No : ")
+print("GAME CLOSED")
+>>>>>>> b9f8568 (Fixed bugs and added check function)
 
 print("GAME CLOSED")
