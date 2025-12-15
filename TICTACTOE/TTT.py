@@ -1,17 +1,8 @@
 from display import design
 design()
-<<<<<<< HEAD
 
 ans = "y"
 
-h = "|"
-g = "---------"
-p1 = input("Enter Player 1 name: ")
-p2 = input("Enter Player 2 name: ")
-=======
-ans = "y"
-h = "|"
-g = "---------"
 p1 = input("Enter Player 1 name = ")
 p2 = input("Enter Player 2 name = ")
 
@@ -57,7 +48,16 @@ def check():
             print(p2, "win")
             r = 1
 
->>>>>>> b9f8568 (Fixed bugs and added check function)
+def board():
+    global h,g
+    h = "|"
+    g = "---------"
+    print(l[0], h, l[1], h, l[2])
+    print(g)
+    print(l[3], h, l[4], h, l[5])
+    print(g)
+    print(l[6], h, l[7], h, l[8]) 
+
 while ans == "y":
     lft = [1, 2, 3, 4, 5, 6, 7, 8, 9]  # for not overputting
     l = [
@@ -73,21 +73,9 @@ while ans == "y":
     ]
      
     # main printing pattern
-    print(l[0], h, l[1], h, l[2])
-    print(g)
-    print(l[3], h, l[4], h, l[5])
-    print(g)
-    print(l[6], h, l[7], h, l[8])  
-    i = 0
-    n = " "
-    s = ["X", "O"]
-    t = [p1, p2]
-<<<<<<< HEAD
-    print("Player", p1, "will use X and Player", p2, "will use O ")
-
-=======
+    board()
+    i,n,s,t = 0," ",["X", "O"],[p1, p2]
     print("Player", p1, " will use X and Player", p2, " will use O ")
->>>>>>> b9f8568 (Fixed bugs and added check function)
     while n in l:
         check()
         if r == 1:
@@ -104,13 +92,15 @@ while ans == "y":
             print("Player", c1, "turn")
 
             # user input for position
-            pos = int(input("Enter on which position you want to put your symbol: "))
-
+            try:
+                pos = int(input("Enter on which position you want to put your symbol : "))
+            except ValueError:
+                print("\nError: Invalid input")
             # check inputy is in range or not
             if pos in lft:
                 l[pos - 1] = c2
                 lft.remove(pos)
-                i = i + 1
+                i += 1
             else:
                 if pos >= 9:
                     print("Please enter number from 1 to 9")
@@ -120,23 +110,13 @@ while ans == "y":
                     print("INVALID INPUT TRY AGAIN !")
 
             # printed the new output
-            print(l[0], h, l[1], h, l[2])
-            print(g)
-            print(l[3], h, l[4], h, l[5])
-            print(g)
-            print(l[6], h, l[7], h, l[8])
+            board()
+            
     if n not in l:
-<<<<<<< HEAD
-        print("Match Draw")
-    print("Want to play again? ")
-    ans = input("Type Y for Yes or N for No: ").lower()
-=======
         check()
         if r == 0:
             print("Match Draw")
         print("Want to play again ? ")
         ans = input("Type Y for Yes or N for No : ")
 print("GAME CLOSED")
->>>>>>> b9f8568 (Fixed bugs and added check function)
 
-print("GAME CLOSED")
