@@ -97,7 +97,7 @@ while ans == "y":
             except ValueError:
                 print("\nError: Invalid input")
                 continue
-            # check inputy is in range or not
+            # check input is in range or not
             if pos in lft:
                 l[pos - 1] = c2
                 lft.remove(pos)
@@ -117,7 +117,8 @@ while ans == "y":
         check()
         if r == 0:
             print("Match Draw")
+            
     print("Want to play again ? ")
     ans = input("Type Y for Yes or N for No : ")
+    
 print("GAME CLOSED")
-
